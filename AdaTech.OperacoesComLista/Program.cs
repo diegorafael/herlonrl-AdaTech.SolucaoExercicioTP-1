@@ -20,7 +20,7 @@
 
             List<string> result = FiltrarStringsPorTamanho(input, 10);
 
-            Console.WriteLine("Strings com 10 ou mais caracteres:");
+            Console.WriteLine("Palavras (strings) com 10 ou mais caracteres:");
             foreach (var item in result)
             {
                 Console.WriteLine(item);

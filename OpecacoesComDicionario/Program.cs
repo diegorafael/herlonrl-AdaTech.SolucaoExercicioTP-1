@@ -8,7 +8,7 @@
 
             Dictionary<string, int> contadorPalavras = ContarPalavras(input);
 
-            Console.WriteLine("Contagem de Palavras:");
+            Console.WriteLine("Contagem de Palavras e Ocorrência:");
             foreach (var par in contadorPalavras)
             {
                 Console.WriteLine($"{par.Key}: {par.Value}");
