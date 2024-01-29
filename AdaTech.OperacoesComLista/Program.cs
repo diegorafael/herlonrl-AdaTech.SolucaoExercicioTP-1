@@ -5,18 +5,18 @@
         static void Main()
         {
             var input = new List<string>
-        {
-            "Idiossincrasia",
-            "Ambivalente",
-            "Quimérica",
-            "Perpendicular",
-            "Efêmero",
-            "Pletora",
-            "Obnubilado",
-            "Xilografia",
-            "Quixote",
-            "Inefável"
-        };
+            {
+                "Idiossincrasia",
+                "Ambivalente",
+                "Quimérica",
+                "Perpendicular",
+                "Efêmero",
+                "Pletora",
+                "Obnubilado",
+                "Xilografia",
+                "Quixote",
+                "Inefável"
+            };
 
             List<string> result = FiltrarStringsPorTamanho(input, 10);
 
@@ -29,7 +29,7 @@
 
         static List<string> FiltrarStringsPorTamanho(List<string> lista, int tamanhoMinimo)
         {
-            List<string> resultado = new List<string>();
+            List<string> resultado = new();
 
             foreach (var str in lista)
             {

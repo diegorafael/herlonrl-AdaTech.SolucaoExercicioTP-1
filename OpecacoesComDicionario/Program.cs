@@ -17,20 +17,20 @@
 
         static Dictionary<string, int> ContarPalavras(string texto)
         {
-            string[] palavras = texto.Split(new char[] { ' ', '.', ',', ';', ':', '!', '?' }, StringSplitOptions.RemoveEmptyEntries);
-            Dictionary<string, int> contador = new Dictionary<string, int>();
+            // Mudando a operação de formatar para que seja aplicado direto no texto antes do split, teremos somente 1 execução
+            // da operação ao invés de 1 x Nº de palavras ;P
+            string[] palavras = texto.ToLower().Split(new char[] { ' ', '.', ',', ';', ':', '!', '?' }, StringSplitOptions.RemoveEmptyEntries);
+            Dictionary<string, int> contador = new();
 
             foreach (string palavra in palavras)
             {
-                string palavraFormatada = palavra.ToLower(); 
-
-                if (contador.ContainsKey(palavraFormatada))
+                if (contador.ContainsKey(palavra))
                 {
-                    contador[palavraFormatada]++;
+                    contador[palavra]++;
                 }
                 else
                 {
-                    contador[palavraFormatada] = 1;
+                    contador[palavra] = 1;
                 }
             }
 

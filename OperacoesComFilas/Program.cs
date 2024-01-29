@@ -19,14 +19,18 @@
             }
 
             Random random = new Random();
-            int passesAteExplodir = random.Next(1, 101);
 
-            Console.WriteLine($"Número de jogadores: {numeroDeJogadores}");
-            Console.WriteLine($"Passes até a batata explodir: {passesAteExplodir}");
 
             while (fila.Count > 1)
             {
-                for (int i = 1; i < passesAteExplodir; i++)
+                int passesAteExplodir = random.Next(1, 101);
+                Console.WriteLine($"Número de jogadores: {fila.Count}");
+                Console.WriteLine($"Passes até a batata explodir: {passesAteExplodir}");
+
+                // Pelo nome da variável, o número sorteado estaria contido nos limites.
+                // Ex.: Com 10 jogadores, o número sorteado foi 8. Na implementação anterior o jogador nº 8 sairia do jogo
+                //    mas a batata durou somente 7 passes, explodindo no 8. Após a mudança na lógica, a batata explode após o 8º passe
+                for (int i = 1; i <= passesAteExplodir; i++)
                 {
                     int jogadorAtual = fila.Dequeue();
                     fila.Enqueue(jogadorAtual); 
@@ -34,10 +38,6 @@
 
                 int jogadorEliminado = fila.Dequeue();
                 Console.WriteLine($"Jogador {jogadorEliminado} foi eliminado!");
-
-                
-                passesAteExplodir = random.Next(1, 101);
-                Console.WriteLine($"Passes até a batata explodir: {passesAteExplodir}");
             }
 
             int jogadorVencedor = fila.Dequeue();
